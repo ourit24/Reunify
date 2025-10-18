@@ -1,0 +1,5 @@
+{
+  "name": "Reunify",
+  "description": "An AI-powered photo editor that takes two images of people and generates a single, new, realistic photo of them hugging in a natural setting, using the Gemini API.",
+  "requestFramePermissions": []
+}
