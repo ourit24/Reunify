@@ -15,8 +15,11 @@ const fileToBase64 = (file: File): Promise<string> => {
   });
 };
 
-export const generateHugImage = async (image1File: File, image2File: File): Promise<string> => {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+export const generateHugImage = async (image1File: File, image2File: File, apiKey: string): Promise<string> => {
+    if (!apiKey) {
+        throw new Error("API Key is required.");
+    }
+    const ai = new GoogleGenAI({ apiKey });
 
     const image1Base64 = await fileToBase64(image1File);
     const image2Base64 = await fileToBase64(image2File);
